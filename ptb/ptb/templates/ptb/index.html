@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" integrity="sha256-/sdxenK1NDowSNuphgwjv8wSosSNZB0t5koXqd7XqOI=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ShaktiDeep Traders</title>
+  </head>
+  <body>
+    <!-- STYLE CSS -->
+    <style>
+    .text-all{
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    body{
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    .head{
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    }
+    .subtitle{
+    text-align: center;
+    color: white;
+    }
+    .container-fluid{
+    margin-top: 5px;
+    width: 100%;
+    }
+    .manager{
+    margin-left: auto;
+    text-align: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 100%;
+    height: 100%;
+    }
+    .body-manager{
+    width: 100%;
+    height: 100%;
+    }
+    .opt{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    }
+    footer{
+    text-align: center;
+    background: white;
+    justify-content: center;
+    align-content: center;
+    vertical-align: center;
+    }
+    .ftext{
+    justify-content: center;
+    color: #A9A9A9;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    }
+    .ftext:hover{
+    color : #673AB7;
+    }
+    a{
+    color: #673AB7;
+    }
+    a:hover{
+    color: #673AB7;
+    }
+    </style>
+    <!-- STYLE CSS -->
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-all">
+      <a class="navbar-brand" href="#">
+        ShaktiDeeep Traders
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Stock Manager</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bill">Billing Manager</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ledger Manager</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bill/allbills">All Bills</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- NAV BAR -->
+    <!--MAIN-->
+    <div class="container-fluid">
+      <div style="background: linear-gradient(to right, #00b09b, #96c93d);" class="jumbotron">
+        <h1 class="text-all head font-weight-bold">ShaktiDeep Traders</h1>
+        <p class="subtitle font-weight-bold">Bill Management System for ShaktiDeep Traders</p>
+      </div>
+    </div>
+    <div class="card body-manager">
+      <div class="card-body">
+        <h3 class="text-all text-center container">Management System</h3><br/>
+        <div class="manager">
+          <div class="row">
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Add Invoice</h5>
+                  <p class="card-text">Add new <b>Sell Record</b> from here</p>
+                  <a href="bill/add" class="btn btn-primary">Add Invoice</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Stock Manager</h5>
+                  <p class="card-text">Manager your <b>Stock</b> from here</p>
+                  <a href="#" class="btn btn-primary">Go Stock Manager</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Send SMS</h5>
+                  <p class="card-text">Send SMS to all customers from here</p>
+                  <a href="#" class="btn btn-primary">Send SMS</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Ledger Checker</h5>
+                  <p class="card-text">Check your <b>Ledger Details</b> from Here</p>
+                  <a href="#" class="btn btn-primary">Ledger Checker</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Manage All Bills</h5>
+                  <p class="card-text">Manage and Delete your <b>All Bills and Invoices</b> from Here</p>
+                  <a href="bill/allbills" class="btn btn-primary">Invoice Manager</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 opt">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-all">Add Customers</h5>
+                  <p class="card-text">Add and Delete your <b>Customers</b> from Here</p>
+                  <a href="bill" class="btn btn-primary">Add Customer</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--MAIN-->
+      <footer class="footer footer-default">
+        <div class="container">
+          <nav class="float-left">
+            
+            
+          </nav>
+          <div class="copyright float-right text-all">
+            <p class="ftext font-weight-bold" style="font-size: 17px;">
+              ©
+              <script>
+              document.write(new Date().getFullYear())
+              </script>, ShaktiDeep Traders made with <i class="material-icons font-weight-bold" style="color:red; font-size: 18px;">favorite</i> by
+              <a class="font-weight-bold" href="https://vaibhavpathakofficial.tk/" target="_blank">Vaibhav Pathak</a></p>.
+            </div>
+          </footer>
+          <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </body>
+      </html>

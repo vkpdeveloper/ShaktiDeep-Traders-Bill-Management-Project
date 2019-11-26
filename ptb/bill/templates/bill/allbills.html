@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
+      integrity="sha256-/sdxenK1NDowSNuphgwjv8wSosSNZB0t5koXqd7XqOI="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>AllBills | ShaktiDeep Traders</title>
+  </head>
+  <body>
+    <center class="m-5">
+      <div style="align-items: center;">
+        <h1>All Bills</h1>
+        <table class="table m-4" style="width: 80%;">
+          <thead>
+            <tr>
+              <th scope="col">Invoice ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Piece</th>
+              <th scope="col">Total Price</th>
+              <th scope="col">Paid Money</th>
+              <th scope="col">Unpaid Money</th>
+              <th scope="col">Mobile Number</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if data != '' %} {% for i in data %}
+            <form action="allbills" method="POST">
+              {% csrf_token %}
+              <tr>
+                <th scope="row">{{ i.bill_id }}</th>
+                <td>{{ i.bill_date }}</td>
+                <td>{{ i.bill_clint_name }}</td>
+                <td>{{ i.bill_product_pcs }}</td>
+                <td>{{ i.total_price }}</td>
+                <td>{{ i.bill_paid }}</td>
+                <td>{{ i.bill_unpaid }}</td>
+                <td>{{ i.bill_mobile_number }}</td>
+                <td>
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </td>
+                <input type="hidden" name="delid" value="{{ i.bill_id }}" />
+              </tr>
+            </form>
+
+            {% endfor %} {% else %}
+            <h1>No Invoices Detected !</h1>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
