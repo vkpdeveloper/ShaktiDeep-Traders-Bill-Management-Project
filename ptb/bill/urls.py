@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.index, name='HomeBill'),
     path('add', views.add, name='AddInvoice'),
     path('allbills', views.allbills, name="AllBills"),
-    path('addemployee', views.employee, name="AddEmployee")
+    path('addemployee', views.employee, name="AddEmployee"),
+    path('clint', views.clint, name="Clint Manager")
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Bill, Clint, Employee
+from .models import Bill, Employee, Clint
 
 
 def index(request):
@@ -46,3 +46,27 @@ def employee(request):
         addemployee.save()
         return HttpResponse('Employee Added')
     return render(request, 'bill/employee.html')
+
+
+def clint(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        addr = request.POST.get('addr')
+        pnum = request.POST.get('pnum')
+        clintadd = Clint(clint_name=name, clint_add=addr,
+                         clint_mobile=pnum)
+        clintadd.save()
+        clint = Clint.objects.all()
+        parmas = {'data': clint}
+        return render(request, 'bill/clint.html', parmas)
+    # elif request.method == 'GET':
+    #     clintdel = request.GET.get('clintid')
+    #     instance = Clint.objects.get(clint_id=clintdel)
+    #     instance.delete()
+    #     clint = Clint.objects.all()
+    #     parmas = {'data': clint}
+    #     return render(request, 'bill/clint.html', parmas)
+    else:
+        clint = Clint.objects.all()
+        parmas = {'data': clint}
+        return render(request, 'bill/clint.html', parmas)

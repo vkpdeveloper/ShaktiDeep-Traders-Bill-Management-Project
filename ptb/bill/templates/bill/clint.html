@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clint Manager | Shakti Deep Traders</title>
+    <style>
+      .my-float {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <center class="m-5">
+      <div style="align-items: center;">
+        <h1>All Clints</h1>
+        <button
+          type="button"
+          data-toggle="modal"
+          data-target="#myModal"
+          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored my-float"
+        >
+          <i class="material-icons">add</i>
+        </button>
+        <table class="table m-4" style="width: 80%;">
+          <thead>
+            <tr>
+              <th scope="col">Clint ID</th>
+              <th scope="col">Clint Name</th>
+              <th scope="col">Clint Mobile</th>
+              <th scope="col">Clint Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if data != '' %} {% for i in data %}
+            <form action="clint" method="GET">
+              {% csrf_token %}
+              <tr>
+                <th scope="row">{{ i.clint_id }}</th>
+                <td>{{ i.clint_name }}</td>
+                <td>{{ i.clint_mobile }}</td>
+                <td>{{ i.clint_add }}</td>
+                <!-- <td>
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </td>
+                <input type="hidden" name="clintid" value="{{ i.clint_id }}" /> -->
+              </tr>
+            </form>
+
+            {% endfor %} {% else %}
+            <h1>No Invoices Detected !</h1>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </center>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Clint</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="clint">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="formGroupExampleInput">Clint Name</label>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                placeholder="Clint Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Address</label>
+              <input
+                type="text"
+                name="addr"
+                class="form-control"
+                id="addr"
+                placeholder="Address"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Phone Number</label>
+              <input
+                type="tel"
+                name="pnum"
+                class="form-control"
+                id="pnum"
+                placeholder="Phone Number"
+              />
+            <center><button type="submit" class="btn btn-primary m-3">Add Invoice</button></center>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+</html>

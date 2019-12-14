@@ -3,17 +3,6 @@ from datetime import date
 from django.utils import timezone
 
 
-class Clint(models.Model):
-    clint_id = models.AutoField(primary_key=True)
-    clint_name = models.CharField(max_length=250)
-    clint_piece = models.IntegerField()
-    clint_pmoney = models.IntegerField()
-    clint_umoney = models.IntegerField()
-
-    def __str__(self):
-        return self.clint_name
-
-
 class Bill(models.Model):
     bill_id = models.AutoField(primary_key=True)
     bill_date = models.DateField(auto_now_add=True)
@@ -36,3 +25,13 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.employee_name
+
+
+class Clint(models.Model):
+    clint_id = models.AutoField(primary_key=True)
+    clint_name = models.CharField(max_length=50)
+    clint_add = models.TextField(max_length=500)
+    clint_mobile = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.clint_name
